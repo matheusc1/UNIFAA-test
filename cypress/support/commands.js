@@ -16,6 +16,18 @@ Cypress.Commands.add('login', (email, password) => {
 
   cy.get('#btn-entrar').click()
 })
+
+Cypress.Commands.add('createProduct', (id, name, quantity, value, date) => {
+  cy.get('#btn-adicionar').click()
+
+  cy.get('#codigo').type(id)
+  cy.get('#nome').type(name)
+  cy.get('#quantidade').type(quantity)
+  cy.get('#valor').type(value)
+  cy.get('#data').type(date)
+
+  cy.get('#btn-salvar').click()
+})
 //
 //
 // -- This is a child command --
